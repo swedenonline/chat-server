@@ -1,0 +1,6 @@
+com/bilal/chatserver/model/Message.class
+com/bilal/chatserver/model/User.class
+com/bilal/chatserver/server/Config.class
+com/bilal/chatserver/server/UserManager.class
+com/bilal/chatserver/server/ChatServer.class
+com/bilal/chatserver/database/DbAdapter.class

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Chat Server</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript">
+            var socketUrl = "ws://localhost:8080/ChatServer/start";
+            var userId   = Math.floor((Math.random() * 10) + 1);
+            var userName = "User"+userId;
+            var userListHeight = screen.height;
+            var allowPublicChat = true;
+      </script>
+      <style type="text/css">
+            .show {
+                display:inline-block;
+            }
+            .hide {
+                display:none;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+            }
+            ul li {width: 70%; padding: 5px; display: inline-block; word-wrap: break-word;}
+            #users_list {
+                /*height: 300px;*/
+                overflow: auto;
+            }
+            #users_list a {
+                padding: 5px;
+            }
+            #panel_body {
+                height: 300px;
+                overflow-y: auto;   
+            }
+    </style>
+      <link rel="stylesheet" href="bootstrap.min_3.3.5.css">
+    </head>
+    <body onbeforeunload="return closeSocket()">
+        <div class="container">
+          <h4>Welcome! <span id="user"></span></h4>
+          <div class="row">
+            <!-- Online users Div-->  
+            <div class="col-sm-2">
+                <div class="list-group" id="users_list"> </div>
+            </div>
+            <!-- Chat Area Div-->  
+            <div class="col-sm-6">
+                <div id="panel_body" style="background-color:#f9f9f9;">
+                    <ul class="list-group" id="chat_body"></ul>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                    </div>
+                    <div class="col-s">
+                        <button type="button" class="btn btn-default btn-lg" onclick="sendMessage()">Send</button>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+        <script src="chat.js"></script>
+        <script type="text/javascript">
+            start();
+        </script>
+    </body>
+</html>

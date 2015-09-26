@@ -44,7 +44,7 @@
 		<version>4.0</version>
 		<configuration>
 			<goalPrefix>embedded-glassfish</goalPrefix>
-			<app>${basedir}/target/${project.artifactId}.war</app>
+			<app>${basedir}/target/${project.artifactId}-${project.version}.war</app>
 			<autoDelete>true</autoDelete>
 			<port>8080</port>
 			<name>${project.artifactId}</name>
